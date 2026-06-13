@@ -29,8 +29,8 @@ export const profile = {
   /** Replace placeholder URLs with your actual profile URLs */
   social: {
     github: "https://github.com/wildanhatami",
-    linkedin: "https://linkedin.com/in/wildanhatami", // Replace with your actual LinkedIn URL
-    instagram: "https://instagram.com/wildanhatami",  // Replace with your actual Instagram URL
+    linkedin: "https://www.linkedin.com/in/mwildanhatami",
+    instagram: "https://www.instagram.com/wildanhtmi",
   },
 
   // ── Hero Section ───────────────────────────────────────────
