@@ -25,6 +25,9 @@ export const profile = {
   /** Primary contact email */
   email: "wildanhatami0305@gmail.com",
 
+  /** WhatsApp / Phone number for display */
+  phone: "+62 857-1831-4942",
+
   web3FormsAccessKey: "004233fc-3964-40f6-9414-b3002448a191",
 
   // ── Social Media ───────────────────────────────────────────
@@ -33,6 +36,10 @@ export const profile = {
     github: "https://github.com/wildanhatami",
     linkedin: "https://www.linkedin.com/in/mwildanhatami",
     instagram: "https://www.instagram.com/wildanhtmi",
+    whatsapp: "https://wa.me/6285718314942",
+    facebook: "https://www.facebook.com/share/1Dtm25nUtf/",
+    threads: "https://www.threads.com/@wildanhtmi",
+    x: "https://x.com/HatamiWildan",
   },
 
   // ── Hero Section ───────────────────────────────────────────

@@ -33,7 +33,7 @@ All personal data is stored in separate files inside `app/data/`. You do **not**
 
 ### Edit Profile Info → `app/data/profile.ts`
 - Full name, display name, subtitle, location, email
-- Social media URLs (GitHub, LinkedIn, Instagram)
+- Social media URLs (GitHub, LinkedIn, Instagram, WhatsApp, Facebook, Threads, X)
 - Hero heading and description
 - About section paragraphs
 
@@ -138,6 +138,10 @@ social: {
   github: "https://github.com/your-username",
   linkedin: "https://linkedin.com/in/your-profile",
   instagram: "https://instagram.com/your-handle",
+  whatsapp: "https://wa.me/your-number",
+  facebook: "https://facebook.com/your-profile",
+  threads: "https://threads.net/your-profile",
+  x: "https://x.com/your-profile",
 },
 ```
 

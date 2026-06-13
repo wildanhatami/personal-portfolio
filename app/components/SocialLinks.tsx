@@ -1,6 +1,7 @@
 "use client";
 
-import { FaGithub, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaFacebookF, FaThreads, FaXTwitter } from "react-icons/fa6";
 import { profile } from "@/app/data/profile";
 
 interface SocialLinksProps {
@@ -29,6 +30,34 @@ const socialLinks = [
     icon: FaInstagram,
     label: "Instagram",
     color: "#e1306c",
+  },
+  {
+    key: "whatsapp",
+    href: profile.social.whatsapp,
+    icon: FaWhatsapp,
+    label: "WhatsApp",
+    color: "#25d366",
+  },
+  {
+    key: "facebook",
+    href: profile.social.facebook,
+    icon: FaFacebookF,
+    label: "Facebook",
+    color: "#1877f2",
+  },
+  {
+    key: "threads",
+    href: profile.social.threads,
+    icon: FaThreads,
+    label: "Threads",
+    color: "#ffffff",
+  },
+  {
+    key: "x",
+    href: profile.social.x,
+    icon: FaXTwitter,
+    label: "X (Twitter)",
+    color: "#ffffff",
   },
 ];
 

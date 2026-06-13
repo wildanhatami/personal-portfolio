@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, MessageCircle } from "lucide-react";
 import { profile } from "@/app/data/profile";
 import ContactForm from "./ContactForm";
 import SocialLinks from "./SocialLinks";
@@ -119,6 +119,31 @@ export default function ContactSection() {
                     className="text-sm text-[#e2eaf4] hover:text-cyan-400 transition-colors"
                   >
                     {profile.email}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div
+                  className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+                  style={{
+                    background: "rgba(37,211,102,0.08)",
+                    border: "1px solid rgba(37,211,102,0.15)",
+                  }}
+                >
+                  <MessageCircle size={15} className="text-green-400" />
+                </div>
+                <div>
+                  <p className="text-[10px] text-[#4a5c74] uppercase tracking-wider mb-0.5">
+                    WhatsApp
+                  </p>
+                  <a
+                    href={profile.social.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-[#e2eaf4] hover:text-green-400 transition-colors"
+                  >
+                    {profile.phone}
                   </a>
                 </div>
               </div>
