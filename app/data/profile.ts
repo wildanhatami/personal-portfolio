@@ -25,12 +25,7 @@ export const profile = {
   /** Primary contact email */
   email: "wildanhatami0305@gmail.com",
 
-  /**
-   * Access key for Web3Forms (https://web3forms.com/).
-   * Register for a free key to receive contact form submissions directly in your email.
-   * If left as default, the form will fall back to using your mailto: address.
-   */
-  web3FormsAccessKey: "YOUR_WEB3FORMS_ACCESS_KEY",
+  web3FormsAccessKey: "004233fc-3964-40f6-9414-b3002448a191",
 
   // ── Social Media ───────────────────────────────────────────
   /** Replace placeholder URLs with your actual profile URLs */
