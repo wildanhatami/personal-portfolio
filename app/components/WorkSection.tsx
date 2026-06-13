@@ -88,7 +88,7 @@ export default function WorkSection() {
             {filtered.length === 0 && (
               <div className="flex items-center justify-center h-48 glass-card rounded-2xl">
                 <p className="text-[#4a5c74] text-sm">
-                  Belum ada proyek di kategori ini.
+                  No projects found in this category.
                 </p>
               </div>
             )}

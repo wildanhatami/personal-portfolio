@@ -53,12 +53,8 @@ export const projects: Project[] = [
     shortName: "Desa Digital Indonesia",
     category: "Web",
     description:
-      "Platform Knowledge Management System untuk mendukung pengelolaan pengetahuan dan informasi terkait desa digital di Indonesia.",
-    /**
-     * TODO: Replace with actual technologies used in this project.
-     * Example: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"]
-     */
-    tech: ["Tambahkan teknologi yang digunakan"],
+      "A Knowledge Management System platform to support the management of knowledge and information related to digital villages in Indonesia.",
+    tech: ["Add technologies used"],
     githubUrl: "", // Not available on personal GitHub yet
     liveUrl: "",   // No live demo yet
     thumbnail: "/images/projects/desa-digital.jpg",
@@ -72,12 +68,8 @@ export const projects: Project[] = [
     name: "IPB Logicore Help Center",
     category: "Web",
     description:
-      "Website help center yang dirancang untuk membantu pengguna memperoleh informasi dan panduan penggunaan layanan secara lebih terstruktur.",
-    /**
-     * TODO: Replace with actual technologies used in this project.
-     * Example: ["React", "Tailwind CSS", "MDX", "Vercel"]
-     */
-    tech: ["Tambahkan teknologi yang digunakan"],
+      "A help center website designed to help users find information and guidance on using services in a more structured way.",
+    tech: ["Add technologies used"],
     githubUrl: "", // Not available on personal GitHub yet
     liveUrl: "",   // No live demo yet
     thumbnail: "/images/projects/logicore-help-center.jpg",
@@ -91,7 +83,7 @@ export const projects: Project[] = [
     name: "Crop Harvest Predictor",
     category: "Data & AI",
     description:
-      "Proyek prediksi kelayakan panen tanaman berdasarkan sejumlah fitur agronomi menggunakan pendekatan machine learning.",
+      "A crop harvest prediction project that determines harvest feasibility based on agronomic features using a machine learning approach.",
     tech: ["Python", "Jupyter Notebook", "Machine Learning"],
     githubUrl: "https://github.com/wildanhatami/crop-harvest-predictor",
     liveUrl: "",
@@ -105,12 +97,8 @@ export const projects: Project[] = [
     name: "Baserow Setup",
     category: "Tools",
     description:
-      "Konfigurasi dan eksplorasi Baserow untuk mendukung pengelolaan data secara lebih terstruktur.",
-    /**
-     * TODO: Replace with actual technologies/tools used.
-     * Example: ["Docker", "Baserow", "PostgreSQL"]
-     */
-    tech: ["Tambahkan teknologi yang digunakan"],
+      "Configuration and exploration of Baserow to support more structured data management.",
+    tech: ["Add technologies used"],
     githubUrl: "https://github.com/wildanhatami/baserow-setup",
     liveUrl: "",
     thumbnail: "/images/projects/baserow-setup.jpg",
@@ -123,7 +111,7 @@ export const projects: Project[] = [
     name: "Course Registration System",
     category: "Programming",
     description:
-      "Program sistem registrasi mata kuliah sebagai implementasi konsep pemrograman dan pengelolaan data akademik.",
+      "A course registration system implementing programming concepts and academic data management.",
     tech: ["C++"],
     githubUrl: "https://github.com/wildanhatami/course-registration-system",
     liveUrl: "",

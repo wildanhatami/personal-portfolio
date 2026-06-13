@@ -42,24 +42,24 @@ export const profile = {
 
   /** Description paragraph shown below the heading */
   heroDescription:
-    "Saya adalah mahasiswa Ilmu Komputer yang tertarik mengembangkan website modern, responsif, dan mudah digunakan. Saya senang membangun solusi digital yang dapat membantu menyelesaikan permasalahan nyata.",
+    "I'm a Computer Science student passionate about building modern, responsive, and user-friendly websites. I enjoy creating digital solutions that help solve real-world problems.",
 
   // ── About Section ──────────────────────────────────────────
   /** First paragraph of the About section */
   aboutParagraph1:
-    "Saya adalah mahasiswa Ilmu Komputer yang memiliki ketertarikan pada pengembangan website, desain antarmuka, dan pemanfaatan teknologi untuk menyelesaikan permasalahan nyata. Saya senang mempelajari teknologi baru, berkolaborasi dalam proyek kelompok, dan mengembangkan produk digital yang nyaman digunakan.",
+    "I'm a Computer Science student with a passion for web development, UI design, and using technology to solve real-world problems. I enjoy learning new technologies, collaborating on team projects, and building digital products that are intuitive and enjoyable to use.",
 
   /** Second paragraph of the About section */
   aboutParagraph2:
-    "Saat ini saya sedang memperluas pengalaman melalui proyek akademik dan pengembangan website. Saya tertarik untuk terus meningkatkan kemampuan pada bidang web development, software development, dan eksplorasi data.",
+    "I'm currently expanding my experience through academic projects and web development. I'm eager to keep growing my skills in web development, software engineering, and data exploration.",
 
   // ── Work Section ───────────────────────────────────────────
   workDescription:
-    "Kumpulan proyek yang saya kerjakan dalam pengembangan website, pemrograman, data, dan eksplorasi teknologi.",
+    "A collection of projects I've worked on in web development, programming, data, and technology exploration.",
 
   // ── Contact Section ────────────────────────────────────────
   contactDescription:
-    "Punya ide, peluang kolaborasi, atau ingin berdiskusi mengenai sebuah proyek? Silakan hubungi saya.",
+    "Have an idea, a collaboration opportunity, or just want to talk about a project? Feel free to reach out.",
 
   // ── Profile Image ──────────────────────────────────────────
   /**

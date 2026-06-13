@@ -35,15 +35,15 @@ export default function ContactForm() {
 
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Nama wajib diisi.";
+    if (!formData.name.trim()) newErrors.name = "Name is required.";
     if (!formData.email.trim()) {
-      newErrors.email = "Email wajib diisi.";
+      newErrors.email = "Email is required.";
     } else if (!validateEmail(formData.email)) {
-      newErrors.email = "Format email tidak valid.";
+      newErrors.email = "Please enter a valid email address.";
     }
-    if (!formData.message.trim()) newErrors.message = "Pesan wajib diisi.";
+    if (!formData.message.trim()) newErrors.message = "Message is required.";
     else if (formData.message.trim().length < 10) {
-      newErrors.message = "Pesan minimal 10 karakter.";
+      newErrors.message = "Message must be at least 10 characters.";
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -275,7 +275,7 @@ export default function ContactForm() {
       {status === "error" && (
         <p className="text-red-400 text-xs text-center flex items-center justify-center gap-1">
           <AlertCircle size={12} />
-          Terjadi kesalahan. Silakan coba lagi.
+          Something went wrong. Please try again.
         </p>
       )}
     </form>
