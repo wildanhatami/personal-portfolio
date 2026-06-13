@@ -24,7 +24,7 @@ export const timelineEntries: TimelineEntry[] = [
     id: "t1",
     year: "2023",
     title: "The Beginning",
-    description: "Started my journey as a Computer Science student",
+    description: "Started my journey as a Computer Science student at IPB University",
     icon: "GraduationCap",
   },
   {

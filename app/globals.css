@@ -147,22 +147,20 @@ body {
 /* ============================================================
    SECTION UTILITIES
    ============================================================ */
-.section-padding {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+@utility section-padding {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
 
-@media (min-width: 768px) {
-  .section-padding {
+  @media (min-width: 768px) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     padding-left: 3rem;
     padding-right: 3rem;
   }
-}
 
-@media (min-width: 1280px) {
-  .section-padding {
+  @media (min-width: 1280px) {
     padding-left: 6rem;
     padding-right: 6rem;
   }

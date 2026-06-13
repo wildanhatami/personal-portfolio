@@ -47,11 +47,11 @@ export const profile = {
   // ── About Section ──────────────────────────────────────────
   /** First paragraph of the About section */
   aboutParagraph1:
-    "I'm a Computer Science student with a passion for web development, UI design, and using technology to solve real-world problems. I enjoy learning new technologies, collaborating on team projects, and building digital products that are intuitive and enjoyable to use.",
+    "I am a Computer Science student at IPB University with a strong interest in Web Development, Software Engineering, and UI/UX design. I enjoy creating modern web applications that combine clean code, robust logic, and user-centric designs. Throughout my academic journey, I have enjoyed exploring how technology can be leveraged to solve real-world problems and build digital products that are intuitive and enjoyable for users.",
 
   /** Second paragraph of the About section */
   aboutParagraph2:
-    "I'm currently expanding my experience through academic projects and web development. I'm eager to keep growing my skills in web development, software engineering, and data exploration.",
+    "I am actively expanding my experience through personal and academic projects, collaborating with teams, and exploring emerging technologies. Currently, I am focused on mastering full-stack web development, learning new programming languages, and improving system design concepts. I am always open to exploring new frameworks and methodologies to grow as a software engineer.",
 
   // ── Work Section ───────────────────────────────────────────
   workDescription:

@@ -68,6 +68,7 @@ function ProfileImage() {
               src={profile.profileImage}
               alt={profile.profileImageAlt}
               fill
+              sizes="(max-width: 768px) 280px, 280px"
               className="object-cover object-top"
               onError={() => setImgError(true)}
               priority
@@ -134,7 +135,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center section-padding pt-28 pb-12"
+      className="relative flex flex-col justify-center section-padding pt-36 md:pt-40 pb-0"
     >
       <div className="max-w-7xl mx-auto w-full">
         {/* Main hero content */}
@@ -283,27 +284,6 @@ export default function HeroSection() {
             </div>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="flex justify-center mt-16 lg:mt-20"
-        >
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-[10px] tracking-widest text-[#4a5c74] uppercase">
-              Scroll
-            </span>
-            <div
-              className="w-[1px] h-8 animate-glow-pulse"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(34,211,238,0.6), transparent)",
-              }}
-            />
-          </div>
-        </motion.div>
       </div>
     </section>
   );

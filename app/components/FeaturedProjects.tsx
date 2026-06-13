@@ -41,6 +41,7 @@ function ProjectThumbnail({
       src={src}
       alt={alt}
       fill
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       className="object-cover group-hover:scale-105 transition-transform duration-500"
       onError={() => setImgError(true)}
     />
@@ -53,7 +54,7 @@ export default function FeaturedProjects() {
   };
 
   return (
-    <section className="section-padding pt-4 pb-16">
+    <section className="section-padding pt-0">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <motion.div

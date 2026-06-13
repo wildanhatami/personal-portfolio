@@ -69,12 +69,11 @@ export const projects: Project[] = [
     category: "Web",
     description:
       "A help center website designed to help users find information and guidance on using services in a more structured way.",
-    tech: ["Add technologies used"],
-    githubUrl: "", // Not available on personal GitHub yet
-    liveUrl: "",   // No live demo yet
+    tech: ["React", "Tailwind CSS", "Vercel"], // Add technologies used
+    githubUrl: "https://github.com/Cokgdsatria/IPB_Logicore_Help_Center",
+    liveUrl: "https://ipb-logicore-help-center.vercel.app",
     thumbnail: "/images/projects/logicore-help-center.jpg",
     featured: true,
-    statusLabel: "Private Project",
   },
 
   // ── PROJECT 3 ──────────────────────────────────────────────
