@@ -77,7 +77,7 @@ export default function Navbar() {
             : "transparent",
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-10 xl:px-16 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto pl-4 pr-6 md:pl-6 md:pr-10 xl:pl-10 xl:pr-16 h-16 flex items-center justify-between">
           {/* Logo */}
           <a
             href="#home"
