@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { ExternalLink, Lock } from "lucide-react";
+import { ExternalLink, Lock, BookOpen } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { Project } from "@/app/data/projects";
 
@@ -82,14 +83,28 @@ export default function ProjectCard({ project }: { project: Project }) {
       }}
     >
       {/* Thumbnail */}
-      <div className="relative h-44 overflow-hidden bg-[#050f1e] shrink-0">
+      <div
+        className="relative h-44 overflow-hidden shrink-0 m-2 rounded-lg"
+        style={{
+          background:
+            project.objectFit === "contain"
+              ? "rgba(8, 20, 45, 0.4)"
+              : "#050f1e",
+          backdropFilter: project.objectFit === "contain" ? "blur(12px)" : undefined,
+          WebkitBackdropFilter: project.objectFit === "contain" ? "blur(12px)" : undefined,
+        }}
+      >
         {!imgError ? (
           <Image
             src={project.thumbnail}
             alt={project.name}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className={`${
+              project.objectFit === "contain"
+                ? "object-contain p-3"
+                : "object-cover"
+            } group-hover:scale-105 transition-transform duration-500`}
             onError={() => setImgError(true)}
             loading="lazy"
           />
@@ -165,7 +180,29 @@ export default function ProjectCard({ project }: { project: Project }) {
         )}
 
         {/* Action buttons */}
-        <div className="flex gap-2 mt-auto">
+        <div className="flex gap-2 mt-auto flex-wrap">
+          {/* Detail button — always shown */}
+          <Link
+            href={`/work/${project.id}`}
+            className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium transition-all duration-200"
+            style={{
+              background: "rgba(168,85,247,0.08)",
+              border: "1px solid rgba(168,85,247,0.2)",
+              color: "#a855f7",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.background = "rgba(168,85,247,0.15)";
+              (e.currentTarget as HTMLAnchorElement).style.color = "#fff";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.background = "rgba(168,85,247,0.08)";
+              (e.currentTarget as HTMLAnchorElement).style.color = "#a855f7";
+            }}
+            aria-label={`View detail for ${project.name}`}
+          >
+            <BookOpen size={13} />
+            Detail
+          </Link>
           {hasGithub && (
             <a
               href={project.githubUrl}

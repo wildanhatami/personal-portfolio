@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, BookOpen } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { featuredProjects } from "@/app/data/projects";
 
@@ -11,10 +12,12 @@ function ProjectThumbnail({
   src,
   alt,
   shortName,
+  objectFit = "cover",
 }: {
   src: string;
   alt: string;
   shortName: string;
+  objectFit?: "cover" | "contain";
 }) {
   const [imgError, setImgError] = useState(false);
 
@@ -42,7 +45,9 @@ function ProjectThumbnail({
       alt={alt}
       fill
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-      className="object-cover group-hover:scale-105 transition-transform duration-500"
+      className={`${
+        objectFit === "contain" ? "object-contain p-3" : "object-cover"
+      } group-hover:scale-105 transition-transform duration-500`}
       onError={() => setImgError(true)}
     />
   );
@@ -116,11 +121,22 @@ export default function FeaturedProjects() {
               }}
             >
               {/* Thumbnail */}
-              <div className="relative h-40 overflow-hidden">
+              <div
+                className="relative h-40 overflow-hidden m-2 rounded-lg"
+                style={{
+                  background:
+                    project.objectFit === "contain"
+                      ? "rgba(8, 20, 45, 0.4)"
+                      : undefined,
+                  backdropFilter: project.objectFit === "contain" ? "blur(12px)" : undefined,
+                  WebkitBackdropFilter: project.objectFit === "contain" ? "blur(12px)" : undefined,
+                }}
+              >
                 <ProjectThumbnail
                   src={project.thumbnail}
                   alt={project.name}
                   shortName={project.shortName || project.name}
+                  objectFit={project.objectFit}
                 />
                 {/* Category badge */}
                 <div className="absolute top-2 left-2">
@@ -147,7 +163,21 @@ export default function FeaturedProjects() {
                 </p>
 
                 {/* Links */}
-                <div className="flex gap-2 mt-3">
+                <div className="flex items-center gap-2 mt-3">
+                  <Link
+                    href={`/work/${project.id}`}
+                    onClick={(e) => e.stopPropagation()}
+                    className="flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-medium transition-all duration-200"
+                    style={{
+                      background: "rgba(168,85,247,0.08)",
+                      border: "1px solid rgba(168,85,247,0.2)",
+                      color: "#a855f7",
+                    }}
+                    aria-label={`View detail for ${project.name}`}
+                  >
+                    <BookOpen size={11} />
+                    Detail
+                  </Link>
                   {project.githubUrl && (
                     <a
                       href={project.githubUrl}

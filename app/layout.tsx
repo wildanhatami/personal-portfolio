@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import NowPlaying from "@/app/components/NowPlaying";
+import PageTransition from "@/app/components/PageTransition";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -69,7 +71,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`${inter.variable} ${plusJakartaSans.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <PageTransition>{children}</PageTransition>
+        {/* Spotify Now Playing — floating widget, shown globally */}
+        <NowPlaying />
+      </body>
     </html>
   );
 }
+

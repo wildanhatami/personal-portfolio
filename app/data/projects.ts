@@ -43,6 +43,17 @@ export interface Project {
   featured: boolean;
   /** Optional label shown when no URLs are available (e.g. "Private Project") */
   statusLabel?: string;
+  /** Controls how the thumbnail image fits. Defaults to "cover" (crops to fill). Use "contain" to show full image. */
+  objectFit?: "cover" | "contain";
+  /**
+   * GitHub repo in "owner/repo" format for auto-fetching README.
+   * Leave empty for private repos — will use longDescription + highlights as fallback.
+   */
+  githubRepo?: string;
+  /** Long description shown as fallback when README is unavailable (private repo). */
+  longDescription?: string;
+  /** Key highlights shown as bullet points in fallback mode. */
+  highlights?: string[];
 }
 
 export const projects: Project[] = [
@@ -60,6 +71,14 @@ export const projects: Project[] = [
     thumbnail: "/images/projects/desa-digital.jpg",
     featured: true,
     statusLabel: "Private Project",
+    longDescription:
+      "KMS Desa Digital Indonesia adalah platform Knowledge Management System yang dirancang untuk mendukung pengelolaan pengetahuan dan informasi terkait desa digital di Indonesia. Platform ini membantu warga dan perangkat desa dalam mengakses, berbagi, dan mengelola informasi secara terstruktur.",
+    highlights: [
+      "Manajemen pengetahuan berbasis kategori dan tag",
+      "Antarmuka pengguna yang ramah dan responsif",
+      "Sistem pencarian konten yang efisien",
+      "Integrasi dengan kebutuhan desa digital Indonesia",
+    ],
   },
 
   // ── PROJECT 2 ──────────────────────────────────────────────
@@ -69,11 +88,12 @@ export const projects: Project[] = [
     category: "Web",
     description:
       "A help center website designed to help users find information and guidance on using services in a more structured way.",
-    tech: ["React", "Tailwind CSS", "Vercel"], // Add technologies used
+    tech: ["React", "Tailwind CSS", "Vercel"],
     githubUrl: "https://github.com/Cokgdsatria/IPB_Logicore_Help_Center",
     liveUrl: "https://ipb-logicore-help-center.vercel.app",
     thumbnail: "/images/projects/logicore-help-center.jpg",
     featured: true,
+    githubRepo: "Cokgdsatria/IPB_Logicore_Help_Center",
   },
 
   // ── PROJECT 3 ──────────────────────────────────────────────
@@ -88,6 +108,7 @@ export const projects: Project[] = [
     liveUrl: "",
     thumbnail: "/images/projects/crop-harvest-predictor.jpg",
     featured: true,
+    githubRepo: "wildanhatami/crop-harvest-predictor",
   },
 
   // ── PROJECT 4 ──────────────────────────────────────────────
@@ -101,7 +122,9 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/wildanhatami/baserow-setup",
     liveUrl: "",
     thumbnail: "/images/projects/baserow-setup.jpg",
+    objectFit: "contain",
     featured: false,
+    githubRepo: "wildanhatami/baserow-setup",
   },
 
   // ── PROJECT 5 ──────────────────────────────────────────────
@@ -116,6 +139,7 @@ export const projects: Project[] = [
     liveUrl: "",
     thumbnail: "/images/projects/course-registration-system.jpg",
     featured: false,
+    githubRepo: "wildanhatami/course-registration-system",
   },
 ];
 

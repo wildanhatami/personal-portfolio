@@ -3,7 +3,7 @@ import Navbar from "@/app/components/Navbar";
 import HeroSection from "@/app/components/HeroSection";
 import FeaturedProjects from "@/app/components/FeaturedProjects";
 import WorkSection from "@/app/components/WorkSection";
-import AboutSection from "@/app/components/AboutSection";
+import AboutSection from "@/app/components/AboutSectionServer";
 import ContactSection from "@/app/components/ContactSection";
 import Footer from "@/app/components/Footer";
 
