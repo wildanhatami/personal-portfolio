@@ -54,7 +54,7 @@ export default function FeaturedProjects() {
   };
 
   return (
-    <section className="section-padding pt-0">
+    <section className="section-padding">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <motion.div
