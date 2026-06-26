@@ -281,10 +281,10 @@ body {
 }
 
 .animate-marquee {
-  animation: marquee-scroll 25s ease-in-out infinite alternate;
+  animation: marquee-scroll 12s ease-in-out infinite alternate;
 }
 .animate-marquee-reverse {
-  animation: marquee-scroll 25s ease-in-out infinite alternate-reverse;
+  animation: marquee-scroll 12s ease-in-out infinite alternate-reverse;
 }
 .animate-marquee:hover, .animate-marquee-reverse:hover {
   animation-play-state: paused;
