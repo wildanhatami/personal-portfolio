@@ -93,12 +93,13 @@ export default function SkillsGrid() {
             >
               {track.title}
             </h4>
-            <div
-              className={`flex w-max gap-3 py-1 ${
-                track.direction === "reverse" ? "animate-marquee-reverse" : "animate-marquee"
-              }`}
-            >
-              {track.items.map((skill, i) => {
+            <div className="w-full overflow-x-auto overflow-y-hidden hide-scrollbar cursor-grab active:cursor-grabbing">
+              <div
+                className={`flex w-max gap-3 py-1 ${
+                  track.direction === "reverse" ? "animate-marquee-reverse" : "animate-marquee"
+                }`}
+              >
+                {track.items.map((skill, i) => {
               const isTargetSkill = skill.id === "nextjs" || skill.id === "github";
               const skillColor = theme === "light" && isTargetSkill ? "#000000" : skill.color;
 
@@ -147,7 +148,8 @@ export default function SkillsGrid() {
                 </div>
               );
             })}
-          </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
