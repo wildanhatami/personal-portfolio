@@ -64,12 +64,7 @@ export default function AboutSection() {
 
               {/* Quick info */}
               <div className="mt-6 space-y-2">
-                <div className="flex items-center gap-3 text-sm">
-                  <span className="w-20 shrink-0 text-xs uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>
-                    Location
-                  </span>
-                  <span className="text-sm" style={{ color: "var(--text-primary)" }}>{profile.location}</span>
-                </div>
+
                 <div className="flex items-center gap-3 text-sm">
                   <span className="w-20 shrink-0 text-xs uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>
                     Email

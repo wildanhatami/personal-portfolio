@@ -98,23 +98,8 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <div
-                  className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
-                  style={{
-                    background: "rgba(168,85,247,0.08)",
-                    border: "1px solid rgba(168,85,247,0.15)",
-                  }}
-                >
-                  <MapPin size={15} className="text-purple-400" />
-                </div>
-                <div>
-                  <p className="text-[10px] uppercase tracking-wider mb-0.5" style={{ color: "var(--text-muted)" }}>
-                    Location
-                  </p>
-                  <p className="text-sm" style={{ color: "var(--text-primary)" }}>{profile.location}</p>
-                </div>
-              </div>
+
+
             </div>
 
             {/* Social links */}

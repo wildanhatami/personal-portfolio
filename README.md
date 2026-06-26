@@ -9,7 +9,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Computer_Science-IPB_University-a855f7?style=flat-square&labelColor=020817" />
   <img src="https://img.shields.io/badge/Status-Open_to_Internship-22d3ee?style=flat-square&labelColor=020817" />
-  <img src="https://img.shields.io/badge/Location-Bogor,_Indonesia-ec4899?style=flat-square&labelColor=020817" />
 </p>
 
 ---

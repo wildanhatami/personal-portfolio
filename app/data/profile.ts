@@ -18,8 +18,7 @@ export const profile = {
   /** Subtitle shown below your name in the Hero section */
   subtitle: "Computer Science Student & Web Developer",
 
-  /** Your current city and country */
-  location: "Bogor, Indonesia",
+
 
   // ── Contact ────────────────────────────────────────────────
   /** Primary contact email */
