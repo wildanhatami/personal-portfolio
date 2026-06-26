@@ -88,6 +88,32 @@ export const skills: Skill[] = [
     color: "#38bdf8",
   },
 
+  // ── Backend ─────────────────────────────────────────────────
+  {
+    id: "nodejs",
+    name: "Node.js",
+    category: "Backend",
+    iconType: "react-icon",
+    iconKey: "SiNodedotjs",
+    color: "#339933",
+  },
+  {
+    id: "express",
+    name: "Express.js",
+    category: "Backend",
+    iconType: "react-icon",
+    iconKey: "SiExpress",
+    color: "#888888", // Neutral for dark mode
+  },
+  {
+    id: "mysql",
+    name: "MySQL",
+    category: "Backend",
+    iconType: "react-icon",
+    iconKey: "SiMysql",
+    color: "#4479A1",
+  },
+
   // ── Tools ───────────────────────────────────────────────────
   {
     id: "git",
@@ -106,7 +132,16 @@ export const skills: Skill[] = [
     color: "#ffffff",
   },
 
-  // ── Languages ───────────────────────────────────────────────
+  {
+    id: "vercel",
+    name: "Vercel",
+    category: "Tool",
+    iconType: "react-icon",
+    iconKey: "SiVercel",
+    color: "#ffffff",
+  },
+
+  // ── Languages & ML ──────────────────────────────────────────
   {
     id: "python",
     name: "Python",
@@ -124,7 +159,24 @@ export const skills: Skill[] = [
     color: "#00599c",
   },
 
-  // ── Design ──────────────────────────────────────────────────
+  {
+    id: "scikitlearn",
+    name: "Scikit-learn",
+    category: "Language",
+    iconType: "react-icon",
+    iconKey: "SiScikitlearn",
+    color: "#f7931e",
+  },
+  {
+    id: "jupyter",
+    name: "Jupyter",
+    category: "Tool",
+    iconType: "react-icon",
+    iconKey: "SiJupyter",
+    color: "#f37626",
+  },
+
+  // ── Design & Frontend Extras ────────────────────────────────
   {
     id: "figma",
     name: "Figma",
@@ -132,5 +184,13 @@ export const skills: Skill[] = [
     iconType: "react-icon",
     iconKey: "SiFigma",
     color: "#f24e1e",
+  },
+  {
+    id: "alpinejs",
+    name: "Alpine.js",
+    category: "Frontend",
+    iconType: "react-icon",
+    iconKey: "SiAlpinedotjs",
+    color: "#8bc0d0",
   },
 ];

@@ -16,6 +16,13 @@ import {
   SiGithub,
   SiPython,
   SiFigma,
+  SiNodedotjs,
+  SiExpress,
+  SiMysql,
+  SiVercel,
+  SiAlpinedotjs,
+  SiScikitlearn,
+  SiJupyter,
 } from "react-icons/si";
 
 const iconMap: Record<string, React.ElementType> = {
@@ -30,6 +37,13 @@ const iconMap: Record<string, React.ElementType> = {
   SiGithub,
   SiPython,
   SiFigma,
+  SiNodedotjs,
+  SiExpress,
+  SiMysql,
+  SiVercel,
+  SiAlpinedotjs,
+  SiScikitlearn,
+  SiJupyter,
 };
 
 export default function SkillsGrid() {
