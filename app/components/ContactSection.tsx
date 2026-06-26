@@ -152,25 +152,7 @@ export default function ContactSection() {
 
               <ContactForm />
 
-              {/* Availability Badge */}
-              <div
-                className="mt-6 flex items-center justify-center gap-2 py-3 rounded-xl border"
-                style={{
-                  background: "var(--badge-subtle)",
-                  borderColor: "var(--border-subtle)",
-                }}
-              >
-                <span
-                  className="w-2 h-2 rounded-full animate-glow-pulse"
-                  style={{
-                    background: "var(--cyan)",
-                    boxShadow: "0 0 8px var(--cyan-glow)",
-                  }}
-                />
-                <span className="text-xs font-semibold tracking-wide" style={{ color: "var(--text-primary)" }}>
-                  Actively seeking internship opportunities
-                </span>
-              </div>
+
             </div>
           </motion.div>
         </div>

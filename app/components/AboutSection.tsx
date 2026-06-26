@@ -82,23 +82,7 @@ export default function AboutSection() {
                     {profile.email}
                   </a>
                 </div>
-                <div className="flex items-center gap-3 text-sm">
-                  <span className="w-20 shrink-0 text-xs uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>
-                    Status
-                  </span>
-                  <span className="text-sm flex items-center gap-1.5">
-                    <span
-                      className="w-1.5 h-1.5 rounded-full animate-glow-pulse"
-                      style={{
-                        background: "var(--cyan)",
-                        boxShadow: "0 0 6px var(--cyan-glow)",
-                      }}
-                    />
-                    <span style={{ color: "var(--text-primary)" }}>
-                      Open to opportunities
-                    </span>
-                  </span>
-                </div>
+
               </div>
             </div>
 

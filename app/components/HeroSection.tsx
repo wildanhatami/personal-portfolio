@@ -142,23 +142,7 @@ export default function HeroSection() {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
           {/* Left: Text Content */}
           <div className="flex-1 text-center lg:text-left order-2 lg:order-1">
-            {/* Badge */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeUpVariant}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6 glass"
-              style={{ border: "1px solid var(--border-subtle)" }}
-            >
-              <span
-                className="w-1.5 h-1.5 rounded-full animate-glow-pulse"
-                style={{ background: "var(--cyan)", boxShadow: "0 0 6px var(--cyan-glow)" }}
-              />
-              <span style={{ color: "var(--text-secondary)" }}>
-                {profile.location} · Available for opportunities
-              </span>
-            </motion.div>
+
 
             {/* Heading */}
             <motion.h1
