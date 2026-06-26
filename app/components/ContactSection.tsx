@@ -6,60 +6,7 @@ import { profile } from "@/app/data/profile";
 import ContactForm from "./ContactForm";
 import SocialLinks from "./SocialLinks";
 
-/** Abstract map / grid decoration panel */
-function MapDecoration() {
-  return (
-    <div
-      className="relative rounded-xl overflow-hidden flex-1 min-h-[120px]"
-      style={{
-        background:
-          "linear-gradient(135deg, var(--badge-subtle), var(--badge-purple))",
-        border: "1px solid var(--border-subtle)",
-      }}
-    >
-      {/* Grid lines */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `
-            linear-gradient(var(--grid-color) 1px, transparent 1px),
-            linear-gradient(90deg, var(--grid-color) 1px, transparent 1px)
-          `,
-          backgroundSize: "28px 28px",
-        }}
-      />
 
-      {/* Decorative circles */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full border border-[rgba(34,211,238,0.15)]"
-      />
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-[rgba(168,85,247,0.15)]"
-      />
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full animate-glow-pulse"
-        style={{
-          background: "rgba(34,211,238,0.6)",
-          boxShadow: "0 0 16px rgba(34,211,238,0.8)",
-        }}
-      />
-
-      {/* Location label */}
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2">
-        <div
-          className="px-3 py-1 rounded-full text-[10px] font-medium whitespace-nowrap"
-          style={{
-            color: "var(--cyan)",
-            background: "var(--badge-bg)",
-            border: "1px solid var(--border-cyan)",
-          }}
-        >
-          📍 {profile.location}
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function ContactSection() {
   return (
@@ -205,9 +152,24 @@ export default function ContactSection() {
 
               <ContactForm />
 
-              {/* Map decoration */}
-              <div className="mt-6">
-                <MapDecoration />
+              {/* Availability Badge */}
+              <div
+                className="mt-6 flex items-center justify-center gap-2 py-3 rounded-xl border"
+                style={{
+                  background: "var(--badge-subtle)",
+                  borderColor: "var(--border-subtle)",
+                }}
+              >
+                <span
+                  className="w-2 h-2 rounded-full animate-glow-pulse"
+                  style={{
+                    background: "var(--cyan)",
+                    boxShadow: "0 0 8px var(--cyan-glow)",
+                  }}
+                />
+                <span className="text-xs font-semibold tracking-wide" style={{ color: "var(--text-primary)" }}>
+                  Actively seeking internship opportunities
+                </span>
               </div>
             </div>
           </motion.div>
