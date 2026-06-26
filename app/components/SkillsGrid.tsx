@@ -49,6 +49,28 @@ const iconMap: Record<string, React.ElementType> = {
 export default function SkillsGrid() {
   const { theme } = useTheme();
 
+  // Separate skills into 3 logical tracks
+  const tracks = [
+    {
+      direction: "normal",
+      items: skills.filter((s) =>
+        ["html", "css", "javascript", "typescript", "python", "cpp", "mysql", "scikitlearn"].includes(s.id)
+      ),
+    },
+    {
+      direction: "reverse",
+      items: skills.filter((s) =>
+        ["react", "nextjs", "tailwindcss", "alpinejs", "nodejs", "express"].includes(s.id)
+      ),
+    },
+    {
+      direction: "normal",
+      items: skills.filter((s) =>
+        ["git", "github", "vercel", "jupyter", "figma"].includes(s.id)
+      ),
+    },
+  ];
+
   return (
     <div>
       <h3
@@ -58,57 +80,66 @@ export default function SkillsGrid() {
         Skills & Tech Stack
       </h3>
       
-      {/* Marquee Track */}
-      <div className="flex w-max gap-3 py-2 animate-marquee">
-        {[...skills, ...skills].map((skill, i) => {
-          const isTargetSkill = skill.id === "nextjs" || skill.id === "github";
-          const skillColor = theme === "light" && isTargetSkill ? "#000000" : skill.color;
+      {/* Marquee Tracks */}
+      <div className="space-y-4">
+        {tracks.map((track, trackIndex) => (
+          <div
+            key={trackIndex}
+            className={`flex w-max gap-3 py-1 ${
+              track.direction === "reverse" ? "animate-marquee-reverse" : "animate-marquee"
+            }`}
+          >
+            {[...track.items, ...track.items].map((skill, i) => {
+              const isTargetSkill = skill.id === "nextjs" || skill.id === "github";
+              const skillColor = theme === "light" && isTargetSkill ? "#000000" : skill.color;
 
-          const IconComponent =
-            skill.iconType === "react-icon" && skill.iconKey
-              ? iconMap[skill.iconKey]
-              : null;
+              const IconComponent =
+                skill.iconType === "react-icon" && skill.iconKey
+                  ? iconMap[skill.iconKey]
+                  : null;
 
-          return (
-            <div
-              key={`${skill.id}-${i}`}
-              className="flex items-center gap-3 px-5 py-2.5 rounded-full transition-colors duration-300 shadow-sm"
-              style={{
-                background: "var(--badge-subtle)",
-                border: "1px solid var(--border-subtle)",
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget as HTMLDivElement;
-                el.style.background = `linear-gradient(135deg, ${skillColor}15, var(--badge-subtle))`;
-                el.style.borderColor = `${skillColor}50`;
-                el.style.boxShadow = `0 0 15px ${skillColor}20`;
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget as HTMLDivElement;
-                el.style.background = "var(--badge-subtle)";
-                el.style.borderColor = "var(--border-subtle)";
-                el.style.boxShadow = "none";
-              }}
-            >
-              {/* Icon */}
-              {IconComponent ? (
-                <IconComponent size={16} style={{ color: skillColor }} />
-              ) : (
-                <span
-                  className="text-[10px] font-black uppercase tracking-wider"
-                  style={{ color: skillColor }}
+              return (
+                <div
+                  key={`${skill.id}-${trackIndex}-${i}`}
+                  className="flex items-center gap-3 px-5 py-2.5 rounded-full transition-colors duration-300 shadow-sm"
+                  style={{
+                    background: "var(--badge-subtle)",
+                    border: "1px solid var(--border-subtle)",
+                  }}
+                  onMouseEnter={(e) => {
+                    const el = e.currentTarget as HTMLDivElement;
+                    el.style.background = `linear-gradient(135deg, ${skillColor}15, var(--badge-subtle))`;
+                    el.style.borderColor = `${skillColor}50`;
+                    el.style.boxShadow = `0 0 15px ${skillColor}20`;
+                  }}
+                  onMouseLeave={(e) => {
+                    const el = e.currentTarget as HTMLDivElement;
+                    el.style.background = "var(--badge-subtle)";
+                    el.style.borderColor = "var(--border-subtle)";
+                    el.style.boxShadow = "none";
+                  }}
                 >
-                  {skill.abbr}
-                </span>
-              )}
+                  {/* Icon */}
+                  {IconComponent ? (
+                    <IconComponent size={16} style={{ color: skillColor }} />
+                  ) : (
+                    <span
+                      className="text-[10px] font-black uppercase tracking-wider"
+                      style={{ color: skillColor }}
+                    >
+                      {skill.abbr}
+                    </span>
+                  )}
 
-              {/* Text */}
-              <span className="text-sm font-medium whitespace-nowrap" style={{ color: "var(--text-primary)" }}>
-                {skill.name}
-              </span>
-            </div>
-          );
-        })}
+                  {/* Text */}
+                  <span className="text-sm font-medium whitespace-nowrap" style={{ color: "var(--text-primary)" }}>
+                    {skill.name}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        ))}
       </div>
     </div>
   );

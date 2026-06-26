@@ -283,7 +283,10 @@ body {
 .animate-marquee {
   animation: marquee-scroll 25s linear infinite;
 }
-.animate-marquee:hover {
+.animate-marquee-reverse {
+  animation: marquee-scroll 25s linear infinite reverse;
+}
+.animate-marquee:hover, .animate-marquee-reverse:hover {
   animation-play-state: paused;
 }
 
