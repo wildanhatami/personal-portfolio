@@ -19,7 +19,27 @@ export async function fetchReadme(repo: string): Promise<string | null> {
 
     // GitHub returns content as base64
     const content = Buffer.from(data.content, "base64").toString("utf-8");
-    return content;
+
+    if (!data.download_url) return content;
+
+    // Get the base raw URL (e.g. https://raw.githubusercontent.com/owner/repo/main)
+    const baseUrl = data.download_url.split("/").slice(0, -1).join("/");
+
+    // Convert relative image URLs (Markdown & HTML) to absolute GitHub raw URLs
+    const fixedContent = content
+      // Markdown images: ![alt](path) -> path not starting with http
+      .replace(/!\[([^\]]*)\]\((?!http)(.*?)\)/g, (match, alt, path) => {
+        // Remove leading ./ or /
+        const cleanPath = path.replace(/^\.\//, "").replace(/^\//, "");
+        return `![${alt}](${baseUrl}/${cleanPath})`;
+      })
+      // HTML images: <img src="path" /> -> path not starting with http
+      .replace(/<img([^>]+)src=["'](?!http)(.*?)["']/gi, (match, prefix, path) => {
+        const cleanPath = path.replace(/^\.\//, "").replace(/^\//, "");
+        return `<img${prefix}src="${baseUrl}/${cleanPath}"`;
+      });
+
+    return fixedContent;
   } catch {
     return null;
   }
