@@ -38,13 +38,15 @@ export default function SkillsGrid() {
   return (
     <div>
       <h3
-        className="text-sm font-bold tracking-widest uppercase mb-4"
+        className="text-sm font-bold tracking-widest uppercase mb-4 pl-4"
         style={{ fontFamily: "var(--font-jakarta)", color: "var(--text-primary)" }}
       >
-        Skills
+        Skills & Tech Stack
       </h3>
-      <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-3">
-        {skills.map((skill, i) => {
+      
+      {/* Marquee Track */}
+      <div className="flex w-max gap-3 py-2 animate-marquee">
+        {[...skills, ...skills].map((skill, i) => {
           const isTargetSkill = skill.id === "nextjs" || skill.id === "github";
           const skillColor = theme === "light" && isTargetSkill ? "#000000" : skill.color;
 
@@ -54,47 +56,43 @@ export default function SkillsGrid() {
               : null;
 
           return (
-            <motion.div
-              key={skill.id}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.04 }}
-              whileHover={{ y: -4 }}
-              className="flex flex-col items-center gap-1.5 p-3 rounded-xl cursor-default transition-all duration-200"
+            <div
+              key={`${skill.id}-${i}`}
+              className="flex items-center gap-3 px-5 py-2.5 rounded-full transition-colors duration-300 shadow-sm"
               style={{
                 background: "var(--badge-subtle)",
                 border: "1px solid var(--border-subtle)",
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLDivElement;
-                el.style.borderColor = `${skillColor}60`;
-                el.style.boxShadow = `0 0 12px ${skillColor}25`;
-                el.style.background = `${skillColor}10`;
+                el.style.background = `linear-gradient(135deg, ${skillColor}15, var(--badge-subtle))`;
+                el.style.borderColor = `${skillColor}50`;
+                el.style.boxShadow = `0 0 15px ${skillColor}20`;
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLDivElement;
+                el.style.background = "var(--badge-subtle)";
                 el.style.borderColor = "var(--border-subtle)";
                 el.style.boxShadow = "none";
-                el.style.background = "var(--badge-subtle)";
               }}
             >
-              <div className="w-8 h-8 flex items-center justify-center">
-                {IconComponent ? (
-                  <IconComponent size={24} style={{ color: skillColor }} />
-                ) : (
-                  <span className="text-xs font-bold" style={{ color: skillColor }}>
-                    {skill.abbr || skill.name.slice(0, 3).toUpperCase()}
-                  </span>
-                )}
-              </div>
-              <span
-                className="text-[10px] text-center leading-tight font-medium"
-                style={{ color: "var(--text-secondary)" }}
-              >
+              {/* Icon */}
+              {IconComponent ? (
+                <IconComponent size={16} style={{ color: skillColor }} />
+              ) : (
+                <span
+                  className="text-[10px] font-black uppercase tracking-wider"
+                  style={{ color: skillColor }}
+                >
+                  {skill.abbr}
+                </span>
+              )}
+
+              {/* Text */}
+              <span className="text-sm font-medium whitespace-nowrap" style={{ color: "var(--text-primary)" }}>
                 {skill.name}
               </span>
-            </motion.div>
+            </div>
           );
         })}
       </div>

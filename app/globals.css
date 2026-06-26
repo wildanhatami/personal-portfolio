@@ -263,6 +263,11 @@ body {
   75% { transform: translateY(4px) translateX(-4px); opacity: 0.5; }
 }
 
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 0.75rem)); } /* -50% to scroll exact half of a duplicated track, adjusting for gap */
+}
+
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
@@ -273,6 +278,13 @@ body {
 
 .animate-blob-drift {
   animation: blob-drift 12s ease-in-out infinite;
+}
+
+.animate-marquee {
+  animation: marquee-scroll 25s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 /* ============================================================

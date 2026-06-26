@@ -42,10 +42,9 @@ export default function AboutSection() {
             boxShadow: "0 4px 60px rgba(0,0,0,0.3)",
           }}
         >
-          {/* Top: About text + Skills */}
-          <div className="flex flex-col lg:flex-row gap-10 mb-10">
-            {/* Left: About text */}
-            <div className="flex-1">
+          {/* Top: About text */}
+          <div className="mb-12">
+            <div>
               <h2
                 className="text-2xl md:text-3xl font-bold mb-6 tracking-tight"
                 style={{ fontFamily: "var(--font-jakarta)", color: "var(--text-primary)" }}
@@ -85,11 +84,20 @@ export default function AboutSection() {
 
               </div>
             </div>
+          </div>
 
-            {/* Right: Skills */}
-            <div className="lg:w-64 xl:w-72 shrink-0">
-              <SkillsGrid />
-            </div>
+          {/* Skills Marquee */}
+          <div className="mb-10 relative overflow-hidden group">
+            {/* Gradient Mask for fading edges */}
+            <div 
+              className="absolute inset-y-0 left-0 w-12 sm:w-20 z-10 pointer-events-none" 
+              style={{ background: "linear-gradient(to right, var(--bg-card), transparent)" }}
+            />
+            <div 
+              className="absolute inset-y-0 right-0 w-12 sm:w-20 z-10 pointer-events-none" 
+              style={{ background: "linear-gradient(to left, var(--bg-card), transparent)" }}
+            />
+            <SkillsGrid />
           </div>
 
           {/* Divider */}
